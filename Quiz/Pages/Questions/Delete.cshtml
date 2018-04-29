@@ -1,0 +1,58 @@
+﻿@page
+@model Quiz.Controllers.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.Text)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.Text)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.AnswerA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.AnswerA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.AnswerB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.AnswerB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.AnswerC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.AnswerC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.AnswerD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.AnswerD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.CorrectAnswer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Question.CorrectAnswer)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Question.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

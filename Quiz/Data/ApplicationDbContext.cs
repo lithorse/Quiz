@@ -15,6 +15,9 @@ namespace Quiz.Data
         {
         }
 
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Score> Scores { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

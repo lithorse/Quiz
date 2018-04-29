@@ -1,0 +1,66 @@
+﻿@page
+@model Quiz.Controllers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question[0].Text)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question[0].AnswerA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question[0].AnswerB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question[0].AnswerC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question[0].AnswerD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question[0].CorrectAnswer)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Question) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorrectAnswer)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
